@@ -3,17 +3,17 @@ import {
     View,
     Text,
     StyleSheet, // component for styling
-    useColorScheme  // For Dark and Light mode customization
+    useColorScheme  // For Dark and Light mode customization   (Appereance module)
 } from 'react-native'
 
 // This will always return jsx element
 function AppPro():JSX.Element{
-    const isDarkMode = useColorScheme() === 'light'
+    const isDarkMode = useColorScheme() === 'dark'
 
     // Applying styles on views
     return(
         <View style={styles.container}>
-            <Text style={styles.darkRedText}>Hello World ! </Text>
+            <Text style={isDarkMode? styles.darkText : styles.darkText}>Hello World ! </Text>
         </View>
     )
 }
